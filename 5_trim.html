@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+</head>
+<body>
+<script type="text/javascript">
+	
+	/*
+		sa   dsd     
+		sa   dsd
+	*/
+	
+	var str = '    sa   dsd    ';
+	
+	
+	//正则做法
+	console.log(str.replace(/^\s+|\s+$/g,''))
+	
+	
+	//字符串做法
+	var index = 0;
+	for(var i=0;i<str.length;i++){
+		if(str[i] != ' '){
+			index = i;
+			break;
+		}
+	}
+	str = str.substring(index);
+	
+//	console.log(str);
+	
+	for(var i=str.length-1;i>0;i--){
+		if(str[i] != ' '){
+			index = i;
+			break;
+		}
+	}
+	str = str.substring(0,index+1);
+	
+	console.log(str);
+	
+	
+</script>
+</body>
+</html>
